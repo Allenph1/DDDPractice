@@ -33,4 +33,7 @@
 		function getUsername() {
 			return $this->username;
 		}
+		function getCreationDate() {
+			return $this->creationDate;
+		}
 	}

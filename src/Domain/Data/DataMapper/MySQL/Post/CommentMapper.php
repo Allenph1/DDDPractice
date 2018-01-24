@@ -8,8 +8,15 @@
 
 	class CommentMapper extends \Domain\Component\MySQLDataMapper
 	{
-		function create(Comment $comment) {
-			$sql = "INSERT "
+		function store(Comment $comment) {
+			if (is_int($comment->$comment->id)) {
+				$sql = "
+				INSERT INTO `" . $this->getTable() . "`
+				(`authorId`, `content`, `postDate`, `postId`)
+				VALUES
+				(" . $comment->getAuthorPersonId() . ", " . $comment->getContent() . ", " . $comment->getCreationDate() . ", " . $comment->getPostId() . )";
+			}
+			$sql =
 		}
 		function getByPost(Post $post) {
 			$sql = "SELECT * FROM " . $this->getTable() . "WHERE postId = :id";

@@ -19,9 +19,6 @@
 		function getId() {
 			return $this->id;
 		}
-		function setauthorPersonId(Int $authorPersonId) {
-			$this->authorPersonId = $authorPersonId;
-		}
 		function getauthorPersonId() {
 			return $this->authorPersonId;
 		}
@@ -33,9 +30,6 @@
 		}
 		function getCreationDate() {
 			return $this->creationDate;
-		}
-		function setComments(CommentCollection $comments) {
-			$this->comments = $comments;
 		}
 		function getComments() {
 			return $this->comments;

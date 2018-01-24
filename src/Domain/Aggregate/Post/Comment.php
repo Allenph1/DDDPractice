@@ -17,9 +17,6 @@
 		function getId() {
 			return $this->id;
 		}
-		function setAuthorPersonId(Int $authorPersonId) {
-			$this->authorPersonId = $authorPersonId;
-		}
 		function getAuthor() {
 			return $this->author;
 		}
