@@ -10,7 +10,8 @@
 		private $ownerPersonId;
 		private $username;
 		private $passwordHash;
-		function __construct(String $ownerPersonId, String $username, PasswordHash $passwordHash, DateTime $creationDate) {
+		function __construct(Int $ownerPersonId, String $username, PasswordHash $passwordHash, DateTime $creationDate) {
+			$this->setOwnerPersonId($ownerPersonId);
 			$this->setUsername($username);
 			$this->setPassword($passwordHash);
 		}
