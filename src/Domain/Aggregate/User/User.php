@@ -2,8 +2,8 @@
 
 	namespace Domain\Aggregate\User;
 
-	use \Domain\Aggregate\User\Name\Name;
-	use \Domain\Aggregate\User\Account\Account;
+	use \Domain\Aggregate\User\Name;
+	use \Domain\Aggregate\User\Account;
 
 	class User
 	{
