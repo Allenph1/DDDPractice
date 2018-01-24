@@ -1,6 +1,6 @@
 <?php
 
-	namespace Domain\DTO\User\Account;
+	namespace Domain\Entity\User\Account;
 
 	class PasswordHash
 	{

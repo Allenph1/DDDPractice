@@ -2,7 +2,7 @@
 
 	namespace Domain\Entity\User;
 
-	use Domain\DTO\User\Account\PasswordHash;
+	use Domain\Entity\User\Account\PasswordHash;
 
 	class Account implements
 	{

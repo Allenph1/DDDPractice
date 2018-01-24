@@ -2,7 +2,7 @@
 
 	namespace Component;
 
-	class MySQLDataMapper
+	class MySQLDataMapper extends DataMapper
 	{
 			private $connection;
 			private $table;
@@ -10,16 +10,16 @@
 				$this->setConnection($connection);
 				$this->setTable($table);
 			}
-			private setConnection(PDO $connection) {
+			private function setConnection(PDO $connection) {
 				$this->connection = $connection;
 			}
-			protected getconnection() {
+			protected function getconnection() {
 				return $this->connection;
 			}
-			private setTable(String $table) {
+			private function setTable(String $table) {
 				$this->table = $table;
 			}
-			private getTable() {
+			private function getTable() {
 				return $this->table;
 			}
 	}
