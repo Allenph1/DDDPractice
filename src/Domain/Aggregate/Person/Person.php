@@ -9,9 +9,8 @@
 		private $lastName;
 		private $accountId;
 		private $creationDate;
-		function __construct(Name $name, Int $accountId, DateTime $creationDate) {
+		function __construct(String $firstName, String $lastName, DateTime $creationDate) {
 			$this->setName($name);
-			$this->setAccountId($accountId);
 			$this->setCreationDate($creationDate);
 		}
 		function setId(Int $id) {
@@ -37,12 +36,6 @@
 		}
 		function getName() {
 			return $this->name;
-		}
-		function setAccountId(Int $accountId) {
-			$this->accountId = $accountId;
-		}
-		function getAccountId() {
-			return $this->accountId;
 		}
 		function setCreationDate(DateTime $creationDate) {
 			$this->creationDate = $creationDate;
