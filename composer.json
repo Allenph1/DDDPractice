@@ -1,0 +1,12 @@
+{
+	"require" : {
+		"symfony/http-foundation": "*",
+		"symfony/routing": "*",
+		"symfony/dependency-injection": "*"
+	},
+	"autoload": {
+    "psr-4": {
+			"": "src/"
+		}
+	}
+}
