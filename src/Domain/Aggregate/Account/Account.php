@@ -10,25 +10,19 @@
 		private $ownerPersonId;
 		private $username;
 		private $passwordHash;
-		function __construct(Int $ownerPersonId, String $username, PasswordHash $passwordHash, DateTime $creationDate) {
-			$this->setOwnerPersonId($ownerPersonId);
+		private $creationDate;
+		function __construct(Int $id, Int $ownerPersonId, String $username, PasswordHash $passwordHash, DateTime $creationDate) {
+			$this->id = $id;
+			$this->ownerPersonId = $ownerPersonId;
+			$this->creationDate = $creationDate;
 			$this->setUsername($username);
 			$this->setPassword($passwordHash);
-		}
-		function setId(Int $id) {
-			$this->id = $id;
 		}
 		function getId() {
 			return $this->id;
 		}
-		function setOwnerPersonId(Int $ownerPersonId) {
-			$this->ownerPersonId = $ownerPersonId;
-		}
 		function getOwnerPersonId() {
 			return $this->ownerPersonId;
-		}
-		function setPassword(PasswordHash $passwordHash) {
-			$this->passwordHash = $passwordHash;
 		}
 		function getPassword() {
 			return $this->passwordHash;

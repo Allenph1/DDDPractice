@@ -7,16 +7,14 @@
 		private $id;
 		private $authorPersonId;
 		private $content;
-		private $postDate;
+		private $creationDate;
 		private $comments;
-		function __construct(Int $authorPersonId, String $content, DateTime $postDate, CommentCollection $comments) {
+		function __construct(Int $id, Int $authorPersonId, String $content, DateTime $creationDate, CommentCollection $comments) {
+			$this->id = $id;
 			$this->setauthorPersonId($authorPersonId);
 			$this->setContent($content);
-			$this->setDate($postDate);
 			$this->setComments($comments);
-		}
-		function setId(Int $id) {
-			$this->id = $id;
+			$this->creationDate = $creationDate;
 		}
 		function getId() {
 			return $this->id;
@@ -33,11 +31,8 @@
 		function getContent() {
 			return $this->content;
 		}
-		function setPostDate(DateTime $postDate) {
-			$this->postDate = $postDate;
-		}
-		function getPostDate() {
-			return $this->postDate;
+		function getCreationDate() {
+			return $this->creationDate;
 		}
 		function setComments(CommentCollection $comments) {
 			$this->comments = $comments;

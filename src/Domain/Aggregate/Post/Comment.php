@@ -6,30 +6,25 @@
 	{
 		private $id;
 		private $authorPersonId;
-		private $postDate;
 		private $content;
-		function __construct(Int $authorPersonId, DateTime $postDate, String $content) {
-			$this->setauthorPersonId($author);
-			$this->setPostDate($postDate);
-			$this->setContent($content);
-		}
-		function setId(Int $id) {
+		private $creationDate;
+		function __construct(Int $id, Int $authorPersonId, DateTime $creationDate, String $content) {
 			$this->id = $id;
+			$this->setAuthorPersonId($author);
+			$this->setContent($content);
+			$this->creationDate = $creationDate;
 		}
 		function getId() {
 			return $this->id;
 		}
-		function setauthorPersonId(Int $authorPersonId) {
+		function setAuthorPersonId(Int $authorPersonId) {
 			$this->authorPersonId = $authorPersonId;
 		}
 		function getAuthor() {
 			return $this->author;
 		}
-		function setPostDate(DateTime $postDate) {
-			$this->postDate = $postDate;
-		}
-		function getPostDate() {
-			return $this->postDate;
+		function getCreationDate() {
+			return $this->creationDate;
 		}
 		function setContent(String $content) {
 			$this->content = $content;
