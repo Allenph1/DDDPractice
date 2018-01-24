@@ -4,7 +4,7 @@
 
 	use Domain\Aggregate\Account\PasswordHash;
 
-	class Account implements
+	class Account
 	{
 		private $id;
 		private $ownerPersonId;
