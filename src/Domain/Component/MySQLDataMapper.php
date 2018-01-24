@@ -7,8 +7,8 @@
 			private $connection;
 			private $table;
 			function __construct(PDO $connection, String $table) {
-				$this->connection = $connection;
-				$this->table = $table;
+				$this->setConnection($connection);
+				$this->setTable($table);
 			}
 			private setConnection(PDO $connection) {
 				$this->connection = $connection;

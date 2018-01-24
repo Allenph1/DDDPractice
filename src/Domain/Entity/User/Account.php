@@ -2,6 +2,8 @@
 
 	namespace Domain\Entity\User;
 
+	use Domain\DTO\User\Account\PasswordHash;
+
 	class Account implements
 	{
 		private $id;
