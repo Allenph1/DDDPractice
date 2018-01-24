@@ -9,8 +9,8 @@
 		private $content;
 		private $postDate;
 		private $comments;
-		function __construct(User $author, String $content, DateTime $postDate, CommentCollection $comments) {
-			$this->setAuthor($author);
+		function __construct(Int $authorId, String $content, DateTime $postDate, CommentCollection $comments) {
+			$this->setAuthorId($author);
 			$this->setContent($content);
 			$this->setDate($postDate);
 			$this->setComments($comments);
@@ -21,11 +21,11 @@
 		function getId() {
 			return $this->id;
 		}
-		function setAuthor(User $author) {
-			$this->author = $author;
+		function setAuthor(Int $authorId) {
+			$this->authorId = $authorId;
 		}
-		function getAuthor() {
-			return $this->author;
+		function getAuthorId() {
+			return $this->authorId;
 		}
 		function setContent(String $content) {
 			$this->content = $content;
