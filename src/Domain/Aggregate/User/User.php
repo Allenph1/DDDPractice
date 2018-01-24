@@ -1,9 +1,9 @@
 <?php
 
-	namespace Domain\Aggregate;
+	namespace Domain\Aggregate\User;
 
-	use \Domain\Entity\User\Name;
-	use \Domain\Entity\User\Account;
+	use \Domain\Aggregate\User\Name\Name;
+	use \Domain\Aggregate\User\Account\Account;
 
 	class User
 	{

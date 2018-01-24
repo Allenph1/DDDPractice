@@ -5,12 +5,12 @@
 	class Post
 	{
 		private $id;
-		private $author;
+		private $authorId;
 		private $content;
 		private $postDate;
 		private $comments;
 		function __construct(Int $authorId, String $content, DateTime $postDate, CommentCollection $comments) {
-			$this->setAuthorId($author);
+			$this->setAuthorId($authorId);
 			$this->setContent($content);
 			$this->setDate($postDate);
 			$this->setComments($comments);

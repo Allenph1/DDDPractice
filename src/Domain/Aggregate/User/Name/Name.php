@@ -1,6 +1,6 @@
 <?php
 
-	namespace Domain\Entity\User;
+	namespace Domain\Aggregate\User\Name;
 
 	class Name
 	{

@@ -1,6 +1,6 @@
 <?php
 
-	namespace Domain\Entity\User\Account;
+	namespace Domain\Aggregate\User\Account;
 
 	class PasswordHash
 	{

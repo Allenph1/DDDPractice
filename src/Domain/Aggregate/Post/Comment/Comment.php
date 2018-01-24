@@ -1,17 +1,15 @@
 <?php
 
-	namespace Domain\Entity\Post;
-
-	use \Domain\Aggregate\User;
+	namespace Domain\Aggregate\Post\Comment;
 
 	class Comment
 	{
 		private $id;
-		private $author;
+		private $authorId;
 		private $postDate;
 		private $content;
-		function __construct(User $author, DateTime $postDate, String $content) {
-			$this->setAuthor($author);
+		function __construct(Int $authorId, DateTime $postDate, String $content) {
+			$this->setAuthorId($author);
 			$this->setPostDate($postDate);
 			$this->setContent($content);
 		}
@@ -21,8 +19,8 @@
 		function getId() {
 			return $this->id;
 		}
-		function setAuthor(User $author) {
-			$this->author = $author;
+		function setAuthorId(Int $authorId) {
+			$this->authorId = $authorId;
 		}
 		function getAuthor() {
 			return $this->author;

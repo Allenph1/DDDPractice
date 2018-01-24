@@ -1,8 +1,8 @@
 <?php
 
-	namespace Domain\Collection\Post;
+	namespace Domain\Aggregate\Post\Comment;
 
-	use \Domain\Entity\Post\Comment;
+	use \Domain\Aggregate\Post\Comment\Comment;
 
 	class CommentCollection implements \Interface\Collection
 	{
