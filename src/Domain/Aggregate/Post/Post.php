@@ -5,12 +5,12 @@
 	class Post
 	{
 		private $id;
-		private $authorUserId;
+		private $authorPersonId;
 		private $content;
 		private $postDate;
 		private $comments;
-		function __construct(Int $authorUserId, String $content, DateTime $postDate, CommentCollection $comments) {
-			$this->setAuthorUserId($authorUserId);
+		function __construct(Int $authorPersonId, String $content, DateTime $postDate, CommentCollection $comments) {
+			$this->setauthorPersonId($authorPersonId);
 			$this->setContent($content);
 			$this->setDate($postDate);
 			$this->setComments($comments);
@@ -21,11 +21,11 @@
 		function getId() {
 			return $this->id;
 		}
-		function setAuthorUserId(Int $authorUserId) {
-			$this->authorUserId = $authorUserId;
+		function setauthorPersonId(Int $authorPersonId) {
+			$this->authorPersonId = $authorPersonId;
 		}
-		function getauthorUserId() {
-			return $this->authorUserId;
+		function getauthorPersonId() {
+			return $this->authorPersonId;
 		}
 		function setContent(String $content) {
 			$this->content = $content;

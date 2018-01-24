@@ -1,11 +1,11 @@
 <?php
 
-	namespace Domain\Aggregate\User;
+	namespace Domain\Aggregate\Person;
 
-	use \Domain\Aggregate\User\Name;
-	use \Domain\Aggregate\User\Account;
+	use \Domain\Aggregate\Person\Name;
+	use \Domain\Aggregate\Account\Account;
 
-	class User
+	class Person
 	{
 		private $id;
 		private $name;

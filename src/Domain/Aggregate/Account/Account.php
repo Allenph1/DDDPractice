@@ -1,8 +1,8 @@
 <?php
 
-	namespace Domain\Aggregate\User;
+	namespace Domain\Aggregate\Account;
 
-	use Domain\Aggregate\User\PasswordHash;
+	use Domain\Aggregate\Account\PasswordHash;
 
 	class Account implements
 	{
