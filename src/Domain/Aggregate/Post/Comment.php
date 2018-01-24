@@ -5,11 +5,11 @@
 	class Comment
 	{
 		private $id;
-		private $authorUserId;
+		private $authorPersonId;
 		private $postDate;
 		private $content;
-		function __construct(Int $authorUserId, DateTime $postDate, String $content) {
-			$this->setauthorUserId($author);
+		function __construct(Int $authorPersonId, DateTime $postDate, String $content) {
+			$this->setauthorPersonId($author);
 			$this->setPostDate($postDate);
 			$this->setContent($content);
 		}
@@ -19,8 +19,8 @@
 		function getId() {
 			return $this->id;
 		}
-		function setauthorUserId(Int $authorUserId) {
-			$this->authorUserId = $authorUserId;
+		function setauthorPersonId(Int $authorPersonId) {
+			$this->authorPersonId = $authorPersonId;
 		}
 		function getAuthor() {
 			return $this->author;

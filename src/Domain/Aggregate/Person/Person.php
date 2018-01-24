@@ -2,18 +2,16 @@
 
 	namespace Domain\Aggregate\Person;
 
-	use \Domain\Aggregate\Person\Name;
-	use \Domain\Aggregate\Account\Account;
-
 	class Person
 	{
 		private $id;
-		private $name;
-		private $account;
+		private $firstName;
+		private $lastName;
+		private $accountId;
 		private $creationDate;
-		function __construct(Name $name, Account $account, DateTime $creationDate) {
+		function __construct(Name $name, Int $accountId, DateTime $creationDate) {
 			$this->setName($name);
-			$this->setAccount($account);
+			$this->setAccountId($accountId);
 			$this->setCreationDate($creationDate);
 		}
 		function setId(Int $id) {
@@ -22,17 +20,29 @@
 		function getId() {
 			return $this->id;
 		}
+		function setFirstName(String $firstName) {
+			$this->firstName = $firstName;
+		}
+		function getFirstName() {
+			return $this->firstName;
+		}
+		function setLastName(String $lastName) {
+			$this->lastName = $lastName;
+		}
+		function getLastName() {
+			return $this->lastName;
+		}
 		function setName(Name $name) {
 			$this->name = $name;
 		}
 		function getName() {
 			return $this->name;
 		}
-		function setAccount(Account $account) {
-			$this->account = $account;
+		function setAccountId(Int $accountId) {
+			$this->accountId = $accountId;
 		}
-		function getAccount() {
-			return $this->account;
+		function getAccountId() {
+			return $this->accountId;
 		}
 		function setCreationDate(DateTime $creationDate) {
 			$this->creationDate = $creationDate;
