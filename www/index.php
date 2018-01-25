@@ -11,7 +11,7 @@
 
 	$routes = new RouteCollection();
 
-	$routes->add('getUsers', new Route('/user', array(
+	$routes->add('getUsers', new Route('/post', array(
 		'controller' => ['HTTP\Controller\User\UserController', 'getAll']
 	)));
 
@@ -25,7 +25,7 @@
 		$controllerClass = $attributes['controller'][0];
 		$controller = new $controllerClass;
 		$method = $attributes['controller'][1];
-		$controller->$method();
+		$controller->$method($request);
 	  $response = new Response(json_encode($attributes));
 	} catch (Routing\Exception\ResourceNotFoundException $e) {
     $response = new Response('Not Found', 404);

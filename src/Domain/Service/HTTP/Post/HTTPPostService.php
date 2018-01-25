@@ -1,9 +1,12 @@
 <?php
 
-	namespace Domain\Service;
+	namespace Domain\Service\HTTP;
 
-	class Post {
+	class HTTPPostService {
 		function __construct() {
+
+		}
+		function getAllSortedByDateDecending() {
 
 		}
 		function writePost(Post $post, Account $account) {
