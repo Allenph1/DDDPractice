@@ -30,6 +30,7 @@
 			$statement->bindValue(":content", $post->getContent());
 			$statement->bindValue(":creationDate", $post->getCreationDate());
 			$statement->bindValue(":postId", $post->getPostId());
+			$statement->bindValue(":id", $post->getId());
 			$statement->execute();
 		}
 		function deleteById(Post $post) {

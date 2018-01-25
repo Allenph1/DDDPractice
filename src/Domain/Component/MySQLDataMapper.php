@@ -6,20 +6,18 @@
 	{
 			private $connection;
 			private $table;
-			function __construct(PDO $connection) {
-				$this->setConnection($connection);
-				$this->setTable($table);
-			}
-			private function setConnection(PDO $connection) {
+			function __construct(PDO $connection, String $table, Factory $factory) {
 				$this->connection = $connection;
+				$this->table = $table;
+				$this->factory = $factory;
 			}
 			protected function getconnection() {
 				return $this->connection;
 			}
-			private function setTable(String $table) {
-				$this->table = $table;
-			}
-			private function getTable() {
+			protected function getTable() {
 				return $this->table;
+			}
+			protected function getFactory() {
+				return $this->factory;
 			}
 	}
