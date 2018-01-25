@@ -8,11 +8,12 @@
 	{
 		function insert(Post $post) {
 			$sql = "INSERT INTO {$this->getTable()}
-						  (authorPersonId, content, creationDate, postId)
+						  (id, authorPersonId, content, creationDate, postId)
 							VALUES
-							(:authorPersonId, :content, :creationDate, :postId)
+							(:id, :authorPersonId, :content, :creationDate, :postId)
 							";
 			$statement = $this->getConnection()->prepare($sql);
+			$statement->bindValue(":id", $comment->getId());
 			$statement->bindValue(":authorPersonId", $comment->getAuthorPersonId());
 			$statement->bindValue(":content", $comment->getContent());
 			$statement->bindValue(":creationDate", $comment->getCreationDate());
