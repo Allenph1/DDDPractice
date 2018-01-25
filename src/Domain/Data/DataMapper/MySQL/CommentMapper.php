@@ -2,18 +2,16 @@
 
 	namespace Domain\Data\DataMapper\MySQL;
 
-	use \Domain\Aggregate\Post\Post;
-	use \Domain\Aggregate\Post\Comment;
-	use \Domain\Aggregate\Post\CommentCollection;
+	use \Domain\Aggregate\Comment\Comment;
 
 	class CommentMapper extends \Domain\Component\MySQLDataMapper
 	{
-		function insert(Comment $comment) {
-				$sql = "INSERT INTO {$this->getTable()}
-							  (authorPersonId, content, creationDate, postId)
-								VALUES
-								(:authorPersonId, :content, :creationDate, :postId)
-								";
+		function insert(Post $post) {
+			$sql = "INSERT INTO {$this->getTable()}
+						  (authorPersonId, content, creationDate, postId)
+							VALUES
+							(:authorPersonId, :content, :creationDate, :postId)
+							";
 			$statement = $this->getConnection()->prepare($sql);
 			$statement->bindValue(":authorPersonId", $comment->getAuthorPersonId());
 			$statement->bindValue(":content", $comment->getContent());

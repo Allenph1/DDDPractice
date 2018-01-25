@@ -6,7 +6,7 @@
 	{
 			private $connection;
 			private $table;
-			function __construct(PDO $connection, String $table) {
+			function __construct(PDO $connection) {
 				$this->setConnection($connection);
 				$this->setTable($table);
 			}

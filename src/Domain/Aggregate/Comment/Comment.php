@@ -1,6 +1,6 @@
 <?php
 
-	namespace Domain\Aggregate\Post;
+	namespace Domain\Aggregate\Comment;
 
 	class Comment
 	{
