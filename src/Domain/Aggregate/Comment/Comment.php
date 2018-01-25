@@ -8,8 +8,10 @@
 		private $authorPersonId;
 		private $content;
 		private $creationDate;
-		function __construct(Int $id, Int $authorPersonId, DateTime $creationDate, String $content) {
+		function __construct(Int $id, Int $authorPersonId, Int $postId, DateTime $creationDate, String $content) {
 			$this->id = $id;
+			$this->authorPersonId = $authorPersonId;
+			$this->postId = $postId;
 			$this->setContent($content);
 			$this->creationDate = $creationDate;
 		}
@@ -17,7 +19,7 @@
 			return $this->id;
 		}
 		function getAuthor() {
-			return $this->author;
+			return $this->authorPersonId;
 		}
 		function getCreationDate() {
 			return $this->creationDate;
