@@ -11,7 +11,7 @@
 				$this->table = $table;
 				$this->factory = $factory;
 			}
-			protected function getconnection() {
+			protected function getConnection() {
 				return $this->connection;
 			}
 			protected function getTable() {

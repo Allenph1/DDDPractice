@@ -3,8 +3,10 @@
 	namespace Domain\Data\DataMapper\MySQL;
 
 	use \Domain\Aggregate\Post\Post;
+	use \Domain\Component\MySQLDataMapper;
+	use \Domain\Interface\Data\DataMapper\PostDataMapper;
 
-	class PostMapper extends \Domain\Component\MySQLDataMapper
+	class PostMapper extends MySQLDataMapper implements PostDataMapper
 	{
 		function insert(Post $post) {
 			$sql = "INSERT INTO {$this->getTable()}
@@ -19,6 +21,15 @@
 			$statement->bindValue(":creationDate", $post->getCreationDate());
 			$statement->execute();
 		}
+		function getAllSortedByDateDecending() {
+			$sql = "SELECT * FROM {$this->getTable()}";
+			$statement = $this->getConnection()->prepare($sql);
+			$statement->execute();
+			$data = $statement->fetch(PDO::FETCH_ASSOC);
+			if ($data) {
+				return $this->getFactory()->createCollection($data);
+			}
+		};
 		function update(Post $post) {
 			$sql = "UPDATE {$this->getTable()}
 							SET authorPersonId = :authorPersonId,

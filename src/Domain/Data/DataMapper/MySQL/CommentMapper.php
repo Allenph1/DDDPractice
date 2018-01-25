@@ -3,8 +3,10 @@
 	namespace Domain\Data\DataMapper\MySQL;
 
 	use \Domain\Aggregate\Comment\Comment;
+	use \Domain\Component\MySQLDataMapper;
+	use \Domain\Interface\Data\DataMapper\CommentDataMapper;
 
-	class CommentMapper extends \Domain\Component\MySQLDataMapper
+	class CommentMapper extends MySQLDataMapper implements CommentDataMapper
 	{
 		function insert(Comment $comment) {
 			$sql = "INSERT INTO {$this->getTable()}
@@ -27,7 +29,7 @@
 			$statement->execute();
 			$data = $statement->fetch(PDO::FETCH_ASSOC);
 			if ($data) {
-
+				return $this->getFactory()->createCollection($data);
 			}
 		}
 		function update(Comment $comment) {

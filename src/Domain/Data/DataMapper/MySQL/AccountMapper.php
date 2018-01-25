@@ -3,8 +3,10 @@
 	namespace Domain\Data\DataMapper\MySQL;
 
 	use \Domain\Aggregate\Account\Account;
+	use \Domain\Component\MySQLDataMapper;
+	use \Domain\Interface\Data\DataMapper\AccountDataMapper;
 
-	class AccountMapper extends \Domain\Component\MySQLDataMapper
+	class AccountMapper extends MySQLDataMapper implements AccountDataMapper
 	{
 		function insert(Account $account) {
 			$sql = "INSERT INTO {$this->getTable()}
@@ -19,6 +21,26 @@
 			$statement->bindValue(":username", $account->getUsername());
 			$statement->bindValue(":creationDate", $account->getCreationDate());
 			$statement->execute();
+		}
+		function getByPersonId(Int $personId) {
+			$sql = "SELECT * FROM {$this->getTable()} WHERE ownerPersonId = :ownerPersonId";
+			$statement = $this->getConnection()->prepare($sql);
+			$statement->bindValue(":ownerPersonId", $personId);
+			$statement->execute();
+			$data = $statement->fetch(PDO::FETCH_ASSOC);
+			if ($data) {
+				return $this->getFactory()->create($data);
+			}
+		}
+		function getByUsername(String $username) {
+			$sql = "SELECT * FROM {$this->getTable()} WHERE username = :username";
+			$statement = $this->getConnection()->prepare($sql);
+			$statement->bindValue(":username", $username);
+			$statement->execute();
+			$data = $statement->fetch(PDO::FETCH_ASSOC);
+			if ($data) {
+				return $this->getFactory()->create($data);
+			}
 		}
 		function update(Account $account) {
 			$sql = "UPDATE {$this->getTable()}

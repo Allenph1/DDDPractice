@@ -1,6 +1,6 @@
 <?php
 
-	namespace Domain\Interface;
+	namespace Domain\Interface\Data\Factory;
 
 	interface CollectionFactory
 	{

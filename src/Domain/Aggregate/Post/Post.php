@@ -12,7 +12,7 @@
 		private $creationDate;
 		function __construct(Int $id, Int $authorPersonId, String $content, DateTime $creationDate) {
 			$this->id = $id;
-			$this->setauthorPersonId($authorPersonId);
+			$this->authorPersonId = $authorPersonId;
 			$this->setContent($content);
 			$this->creationDate = $creationDate;
 		}

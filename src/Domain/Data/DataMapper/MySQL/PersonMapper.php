@@ -3,8 +3,10 @@
 	namespace Domain\Data\DataMapper\MySQL;
 
 	use \Domain\Aggregate\Person\Person;
+	use \Domain\Component\MySQLDataMapper;
+	use \Domain\Interface\Data\DataMapper\PersonDataMapper;
 
-	class PersonMapper extends \Domain\Component\MySQLDataMapper
+	class PersonMapper extends MySQLDataMapper implements PersonDataMapper
 	{
 		function insert(Person $person) {
 			$sql = "INSERT INTO {$this->getTable()}
@@ -18,6 +20,16 @@
 			$statement->bindValue(":lastName", $person->getlastName());
 			$statement->bindValue(":creationDate", $person->getCreationDate());
 			$statement->execute();
+		}
+		function getById(Int $id) {
+			$sql = "SELECT * FROM {$this->getTable()} WHERE id = :id";
+			$statement = $this->getConnection()->prepare($sql);
+			$statement->bindValue(":id", $id);
+			$statement->execute;
+			$data = $statement->fetch(PDO::FETCH_ASSOC);
+			if ($data) {
+				return $this->getFactory()->create($data);
+			}
 		}
 		function update(Person $person) {
 			$sql = "UPDATE {$this->getTable()}
