@@ -2,8 +2,8 @@
 	"require" : {
 		"symfony/http-foundation": "*",
 		"symfony/routing": "*",
-		"symfony/dependency-injection": "*",
-    "ramsey/uuid": "*"	
+    "ramsey/uuid": "*",
+    "rdlowrey/auryn": "*"
 },
 	"autoload": {
     "psr-4": {

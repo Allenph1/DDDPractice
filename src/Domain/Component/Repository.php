@@ -1,5 +1,7 @@
 <?php
 
+  namespace Domain\Component;
+
   class Repository
   {
     private $idCache = [];
