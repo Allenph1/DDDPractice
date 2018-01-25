@@ -10,7 +10,6 @@
 		private $creationDate;
 		function __construct(Int $id, Int $authorPersonId, DateTime $creationDate, String $content) {
 			$this->id = $id;
-			$this->setAuthorPersonId($author);
 			$this->setContent($content);
 			$this->creationDate = $creationDate;
 		}
